@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="https://jakarta.ee/xml/ns/jakartaee" 
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" 
+         version="5.0">
+         
+  <display-name>FashionStore</display-name>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <!-- ALL SERVLET MAPPINGS (Centralized here to prevent conflicts) -->
+  
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.HomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ProductsServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.ProductsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductsServlet</servlet-name>
+    <url-pattern>/products</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.CartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.AddToCartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <url-pattern>/addtocart</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ProfileServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.ProfileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProfileServlet</servlet-name>
+    <url-pattern>/profile</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>WishlistServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.WishlistServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WishlistServlet</servlet-name>
+    <url-pattern>/wishlist</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.AdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/admin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ProductDetailsServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.ProductDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductDetailsServlet</servlet-name>
+    <url-pattern>/productdetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.OrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/order/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ReviewServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.ReviewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReviewServlet</servlet-name>
+    <url-pattern>/submit-review</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RemoveFromCartServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.RemoveFromCartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoveFromCartServlet</servlet-name>
+    <url-pattern>/removefromcart</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UpdateCartServlet</servlet-name>
+    <servlet-class>com.fashionstore.controller.UpdateCartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateCartServlet</servlet-name>
+    <url-pattern>/updatecart</url-pattern>
+  </servlet-mapping>
+
+</web-app>

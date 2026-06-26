@@ -1,0 +1,463 @@
+/* =============================================
+   HOME PAGE — Myntra+Flipkart Style
+   ============================================= */
+
+/* ── Hero Slider ───────────────────────────── */
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 420px;
+}
+
+.hero-slider__track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    height: 100%;
+}
+
+.hero-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-slide__content {
+    width: 100%;
+}
+
+.hero-slide__text {
+    max-width: 500px;
+    color: var(--text-white);
+    animation: fadeInUp 0.6s ease;
+}
+
+.hero-slide__tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: var(--font-sm);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+}
+
+.hero-slide__text h1 {
+    font-size: var(--font-4xl);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: var(--space-sm);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.hero-slide__text p {
+    font-size: var(--font-lg);
+    margin-bottom: var(--space-lg);
+    opacity: 0.9;
+}
+
+.hero-slide__text .btn-primary {
+    background: var(--text-white);
+    color: var(--text-primary);
+    border-color: var(--text-white);
+    font-weight: 700;
+}
+
+.hero-slide__text .btn-primary:hover {
+    background: transparent;
+    color: var(--text-white);
+    transform: translateY(-2px);
+}
+
+/* Slider Buttons */
+.hero-slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.9);
+    color: var(--text-primary);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-fast);
+}
+
+.hero-slider__btn:hover {
+    background: var(--text-white);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.hero-slider__btn--prev { left: 20px; }
+.hero-slider__btn--next { right: 20px; }
+
+/* Slider Dots */
+.hero-slider__dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.hero-slider__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.hero-slider__dot.active {
+    background: var(--text-white);
+    width: 28px;
+    border-radius: 5px;
+}
+
+/* ── Deals of the Day ──────────────────────── */
+.deals-section {
+    padding: var(--space-2xl) 0;
+    background: var(--bg-primary);
+}
+
+.deals-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.deals-timer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.deals-timer__label {
+    font-size: var(--font-sm);
+    color: var(--text-muted);
+    margin-right: 4px;
+}
+
+.deals-timer__digit {
+    background: var(--text-primary);
+    color: var(--text-white);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-md);
+    font-weight: 700;
+    min-width: 36px;
+    text-align: center;
+}
+
+.deals-scroll {
+    display: flex;
+    gap: var(--space-md);
+    overflow-x: auto;
+    padding-bottom: var(--space-sm);
+    scroll-snap-type: x mandatory;
+}
+
+.deal-card {
+    min-width: 200px;
+    flex-shrink: 0;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    scroll-snap-align: start;
+}
+
+.deal-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+.deal-card__img {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deal-card__info {
+    padding: var(--space-md);
+}
+
+.deal-card__title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.deal-card__offer {
+    font-size: var(--font-sm);
+    color: var(--success);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+}
+
+/* ── Shop by Category ──────────────────────── */
+.category-section {
+    padding: var(--space-2xl) 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+}
+
+.category-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.category-tile:hover {
+    transform: translateY(-6px);
+    color: var(--primary);
+}
+
+.category-tile__img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-sm);
+    transition: box-shadow var(--transition-normal);
+    overflow: hidden;
+}
+
+.category-tile:hover .category-tile__img {
+    box-shadow: var(--shadow-lg);
+}
+
+.category-tile__emoji {
+    font-size: 48px;
+}
+
+.category-tile__name {
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+/* ── Offer Strip ───────────────────────────── */
+.offer-strip {
+    padding: var(--space-xl) 0;
+}
+
+.offer-strip__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.offer-strip__card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    color: var(--text-white);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.offer-strip__card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.offer-strip__icon {
+    font-size: 28px;
+}
+
+.offer-strip__card strong {
+    display: block;
+    font-size: var(--font-md);
+    margin-bottom: 2px;
+}
+
+.offer-strip__card p {
+    font-size: var(--font-sm);
+    opacity: 0.9;
+}
+
+/* ── Product Cards (Home) ──────────────────── */
+.product-grid-home {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+}
+
+.products-home {
+    padding: var(--space-2xl) 0;
+    background: var(--bg-primary);
+}
+
+.product-card-home {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.product-card-home:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+.product-card-home__img-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card-home__img {
+    width: 100%;
+    aspect-ratio: 3/4;
+}
+
+.product-card-home__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Wishlist Heart */
+.product-card-home__wishlist {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    color: var(--text-muted);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all var(--transition-normal);
+}
+
+.product-card-home:hover .product-card-home__wishlist {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.product-card-home__wishlist:hover {
+    color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+.product-card-home__wishlist.active {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--primary);
+}
+
+.product-card-home__wishlist.active svg {
+    fill: var(--primary);
+}
+
+/* Badge on card */
+.product-card-home__badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+}
+
+/* Product Info */
+.product-card-home__info {
+    padding: var(--space-md);
+}
+
+.product-card-home__brand {
+    font-size: var(--font-base);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.product-card-home__name {
+    font-size: var(--font-sm);
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: var(--space-sm);
+}
+
+.product-card-home__price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-sm);
+}
+
+.product-card-home__rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--font-sm);
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 1024px) {
+    .hero-slider { height: 340px; }
+    .hero-slide__text h1 { font-size: var(--font-3xl); }
+    .product-grid-home { grid-template-columns: repeat(3, 1fr); }
+    .category-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .hero-slider { height: 280px; }
+    .hero-slide__text h1 { font-size: var(--font-2xl); }
+    .hero-slider__btn { width: 36px; height: 36px; font-size: 16px; }
+    .product-grid-home { grid-template-columns: repeat(2, 1fr); }
+    .category-grid { grid-template-columns: repeat(4, 1fr); gap: var(--space-sm); }
+    .offer-strip__cards { grid-template-columns: 1fr; }
+    .deals-header { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+    .hero-slider { height: 220px; }
+    .hero-slide__text h1 { font-size: 20px; }
+    .category-grid { grid-template-columns: repeat(2, 1fr); }
+    .product-grid-home { gap: var(--space-sm); }
+}

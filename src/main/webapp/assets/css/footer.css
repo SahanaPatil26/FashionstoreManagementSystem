@@ -1,0 +1,122 @@
+/* =============================================
+   FOOTER — Myntra/Flipkart Style
+   ============================================= */
+
+.site-footer {
+    background-color: var(--text-primary);
+    color: #B5B6BA;
+    margin-top: var(--space-3xl);
+}
+
+/* ── Footer Grid ───────────────────────────── */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2xl);
+    padding: var(--space-2xl) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Footer Column ─────────────────────────── */
+.footer-col__title {
+    color: var(--text-white);
+    font-size: var(--font-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: var(--space-md);
+}
+
+.footer-col__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.footer-col__list li a {
+    color: #B5B6BA;
+    font-size: var(--font-sm);
+    transition: all var(--transition-fast);
+    display: inline-block;
+}
+
+.footer-col__list li a:hover {
+    color: var(--text-white);
+    padding-left: 6px;
+}
+
+/* ── Social Icons ──────────────────────────── */
+.footer-social {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.footer-social__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #B5B6BA;
+    transition: all var(--transition-normal);
+}
+
+.footer-social__icon:hover {
+    background-color: var(--primary);
+    color: var(--text-white);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(255, 63, 108, 0.3);
+}
+
+/* ── Trust Badges ──────────────────────────── */
+.footer-trust__badges {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.footer-trust__badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--font-sm);
+    color: #B5B6BA;
+}
+
+.footer-trust__badge svg {
+    flex-shrink: 0;
+}
+
+/* ── Bottom Bar ────────────────────────────── */
+.footer-bottom {
+    padding: var(--space-lg) 0;
+}
+
+.footer-bottom p {
+    font-size: var(--font-xs);
+    color: var(--text-muted);
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xl);
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        padding: var(--space-xl) 0;
+    }
+
+    .footer-bottom .flex-between {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+    }
+}
