@@ -1,6 +1,6 @@
 # Fashion Store
 
-A Java Full Stack E-Commerce web application developed as part of my Software Development Internship at Tap Academy. The application allows users to browse fashion products, manage their shopping cart and wishlist, and place orders through a simple and user-friendly interface.
+A Java Full Stack E-Commerce web application . The application allows users to browse fashion products, manage their shopping cart and wishlist, and place orders through a simple and user-friendly interface.
 
 ## Features
 
